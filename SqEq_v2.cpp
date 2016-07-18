@@ -1,4 +1,4 @@
-#include <stdio.h>/
+#include <stdio.h>
 #include <math.h>
 #include <assert.h>
 int SqEq_Ev (double, double, double, double*, double*);
