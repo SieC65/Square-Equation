@@ -7,6 +7,7 @@ int SqEq_Test (double*, double*);
 int SqEq_Sc (double*, double*, double*);
 const int INF = -1;
 
+//! Search for quadratic equation roots
 int main ()
 {
     double a = 0, b = 0, c = 0;
@@ -29,6 +30,9 @@ int main ()
     }
 }
 
+//! Testing of search for roots
+//! @param x1 is the first root
+//! @param x2 is the second root
 int SqEq_Test (double* x1, double* x2)
 {
     const int Np = 7;
@@ -44,6 +48,10 @@ int SqEq_Test (double* x1, double* x2)
     printf ("\n-----END OF TEST-----\n");
 }
 
+//! Input user's parameters
+//! @param a is the coefficient of x^2
+//! @param b is the coefficient of x
+//! @param c is the free coefficient
 int SqEq_Sc (double* a, double* b, double* c)
 {
     assert (a != b && b != c && a != c);
@@ -56,6 +64,13 @@ int SqEq_Sc (double* a, double* b, double* c)
     scanf ("%lg", c);
 }
 
+//! Search for roots
+//! @param a is the coefficient of x^2
+//! @param b is the coefficient of x
+//! @param c is the free coefficient
+//! @param x1 is the first root
+//! @param x2 is the second root
+//! @return the number of roots
 int SqEq_Ev (double a, double b, double c, double* x1, double* x2)
 {
     assert (x1 != x2);
@@ -64,8 +79,8 @@ int SqEq_Ev (double a, double b, double c, double* x1, double* x2)
     {
         if (b == 0)
         {
-            if (c == 0) return INF;
-            else return (0);
+			if (c == 0) return INF;
+			else return (0);
         }
         else
         {
@@ -96,6 +111,13 @@ int SqEq_Ev (double a, double b, double c, double* x1, double* x2)
     }
 }
 
+//! Print founded roots
+//! @param a is the coefficient of x^2
+//! @param b is the coefficient of x
+//! @param c is the free coefficient
+//! @param x1 is the first root
+//! @param x2 is the second root
+//! @param N_Roots is the number of roots
 int SqEq_Pr (double a, double b, double c, double* x1, double* x2, int N_Roots)
 {
     assert (x1 != x2);
@@ -103,5 +125,5 @@ int SqEq_Pr (double a, double b, double c, double* x1, double* x2, int N_Roots)
     if (N_Roots == 0) printf ("\n there are no roots \n");
     else if (N_Roots == 1) printf ("\n there is one root: \n  x1 = %.1f \n", *x1);
     else if (N_Roots == 2) printf ("\n there are two roots: \n  x1 = %.1f \n  x2 = %.1f \n", *x1, *x2);
-    else if (N_Roots == -1) printf ("\n there are infinitive amount of roots \n");
+    else if (N_Roots == -1) printf ("\n there are infinite number of roots \n");
 }
